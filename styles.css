@@ -378,6 +378,7 @@ html[dir="rtl"] .hero-copy {
 }
 
 #who,
+.guidebook-section,
 .logo-section,
 .colors-section,
 .type-section,
@@ -483,6 +484,118 @@ html[dir="rtl"] .hero-copy {
 .rules-grid p,
 .type-samples p {
   color: var(--muted);
+}
+
+.guidebook-section {
+  background:
+    linear-gradient(180deg, var(--soft), #ffffff 48%, var(--soft));
+}
+
+.guidebook-intro {
+  align-items: end;
+  display: grid;
+  gap: 34px;
+  grid-template-columns: minmax(320px, 0.9fr) minmax(300px, 0.8fr);
+}
+
+.guidebook-intro .section-heading {
+  margin-bottom: 0;
+}
+
+.guidebook-intro > p {
+  color: var(--muted);
+  font-size: 1.12rem;
+  margin: 0;
+}
+
+.guidebook-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 36px 0 24px;
+}
+
+.guide-filter {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--navy);
+  cursor: pointer;
+  font-weight: 900;
+  min-height: 42px;
+  padding: 8px 16px;
+  transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+.guide-filter:hover,
+.guide-filter.is-active {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--white);
+}
+
+.guidebook-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.guide-page-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 14px 42px rgba(2, 20, 65, 0.06);
+  display: grid;
+  overflow: hidden;
+}
+
+.guide-page-meta {
+  align-items: end;
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+  padding: 18px 18px 14px;
+}
+
+.guide-page-meta h3 {
+  color: var(--navy);
+  font-size: 1.24rem;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.guide-page-label {
+  color: var(--blue);
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 900;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.guide-page-number {
+  background: color-mix(in srgb, var(--blue) 9%, var(--white));
+  border: 1px solid color-mix(in srgb, var(--blue) 22%, var(--white));
+  border-radius: 999px;
+  color: var(--blue);
+  flex: 0 0 auto;
+  font-size: 0.82rem;
+  font-weight: 900;
+  padding: 7px 11px;
+  white-space: nowrap;
+}
+
+.guide-page-visual {
+  background: #e8ebf2;
+  border-top: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.guide-page-visual img {
+  aspect-ratio: 16 / 9;
+  height: auto;
+  object-fit: cover;
+  width: 100%;
 }
 
 .section-navy {
@@ -972,6 +1085,7 @@ html[dir="rtl"] .hero-copy {
 
   .visual-grid,
   .logo-showcase,
+  .guidebook-intro,
   .pattern-layout,
   .mockup-feature {
     grid-template-columns: 1fr;
@@ -983,6 +1097,10 @@ html[dir="rtl"] .hero-copy {
 
   .mockup-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .guidebook-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1062,6 +1180,7 @@ html[dir="rtl"] .hero-copy {
   }
 
   #who,
+  .guidebook-section,
   .logo-section,
   .colors-section,
   .type-section,
@@ -1073,6 +1192,7 @@ html[dir="rtl"] .hero-copy {
   .values-grid,
   .visual-principles,
   .rules-grid,
+  .guidebook-grid,
   .palette-grid,
   .mockup-grid {
     grid-template-columns: 1fr;
@@ -1081,6 +1201,27 @@ html[dir="rtl"] .hero-copy {
   .statement {
     min-height: 250px;
     padding: 26px;
+  }
+
+  .guidebook-controls {
+    flex-wrap: nowrap;
+    margin-inline: -20px;
+    overflow-x: auto;
+    padding: 0 20px 6px;
+    scrollbar-width: none;
+  }
+
+  .guidebook-controls::-webkit-scrollbar {
+    display: none;
+  }
+
+  .guide-filter {
+    flex: 0 0 auto;
+  }
+
+  .guide-page-meta {
+    align-items: start;
+    display: grid;
   }
 
   .statement span {

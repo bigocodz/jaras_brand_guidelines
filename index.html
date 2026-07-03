@@ -17,6 +17,7 @@
       </a>
       <nav class="site-nav" aria-label="التنقل الرئيسي" data-i18n-aria="primaryNav">
         <a href="#who" data-i18n="navWho">من نحن</a>
+        <a href="#guidebook" data-i18n="navGuidebook">الدليل الكامل</a>
         <a href="#logo" data-i18n="navLogo">الشعار</a>
         <a href="#colors" data-i18n="navColors">الألوان</a>
         <a href="#typography" data-i18n="navTypography">الخطوط</a>
@@ -50,17 +51,17 @@
             نظام هوية لقطاع الضيافة يرتكز على إشارة واضحة: تشغيل أحدث، تجربة ضيف لا تنسى، ولغة بصرية تبدأ من علامة جرس.
           </p>
           <div class="hero-actions">
-            <a class="button button-light" href="#visual-system">
+            <a class="button button-light" href="#guidebook">
               <svg aria-hidden="true" viewBox="0 0 24 24">
                 <path d="M4 6h16M4 12h16M4 18h10"></path>
               </svg>
-              <span data-i18n="viewSystem">استعراض النظام</span>
+              <span data-i18n="viewFullGuide">استعراض الدليل الكامل</span>
             </a>
-            <a class="button button-outline" href="#applications">
+            <a class="button button-outline" href="#visual-system">
               <svg aria-hidden="true" viewBox="0 0 24 24">
                 <path d="M4 7h16v10H4zM8 21h8M12 17v4"></path>
               </svg>
-              <span data-i18n="viewMockups">التطبيقات</span>
+              <span data-i18n="viewSystem">النظام البصري</span>
             </a>
           </div>
         </div>
@@ -78,6 +79,28 @@
           <p data-i18n="introCopy">
             تمكّن جرس ملاك مرافق الإقامة والفنادق من تقديم خدمة استثنائية، ورفع كفاءة التشغيل، وصناعة تجربة ضيف لا تنسى.
           </p>
+        </div>
+      </section>
+
+      <section class="section-light guidebook-section" id="guidebook" aria-labelledby="guidebook-title">
+        <div class="section-shell">
+          <div class="guidebook-intro">
+            <div class="section-heading">
+              <p class="section-kicker" data-i18n="guidebookKicker">الدليل الكامل</p>
+              <h2 id="guidebook-title" data-i18n="guidebookTitle">كل صفحات هوية جرس في تجربة واحدة.</h2>
+            </div>
+            <p data-i18n="guidebookCopy">
+              استعرض الصفحات الأصلية من ملف الهوية، مرتبة حسب الأقسام حتى يسهل الوصول إلى الشعار، الألوان، الخطوط، النمط، وتطبيقات الهوية.
+            </p>
+          </div>
+          <div class="guidebook-controls" aria-label="تصفية صفحات الدليل" data-i18n-aria="guidebookFilters">
+            <button class="guide-filter is-active" type="button" data-guide-filter="all" data-i18n="filterAll">الكل</button>
+            <button class="guide-filter" type="button" data-guide-filter="foundation" data-i18n="filterFoundation">الأساسيات</button>
+            <button class="guide-filter" type="button" data-guide-filter="logo" data-i18n="filterLogo">الشعار</button>
+            <button class="guide-filter" type="button" data-guide-filter="system" data-i18n="filterSystem">النظام البصري</button>
+            <button class="guide-filter" type="button" data-guide-filter="applications" data-i18n="filterApplications">التطبيقات</button>
+          </div>
+          <div class="guidebook-grid" data-guidebook-grid></div>
         </div>
       </section>
 

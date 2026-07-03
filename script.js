@@ -3,8 +3,11 @@ const navLinks = Array.from(document.querySelectorAll(".site-nav a"));
 const toast = document.querySelector("[data-toast]");
 const languageToggle = document.querySelector("[data-lang-toggle]");
 const currentLanguageLabel = document.querySelector("[data-current-lang]");
+const guidebookGrid = document.querySelector("[data-guidebook-grid]");
+const guideFilterButtons = Array.from(document.querySelectorAll("[data-guide-filter]"));
 let toastTimer;
 let currentLanguage = "ar";
+let activeGuideFilter = "all";
 
 const translations = {
   ar: {
@@ -31,6 +34,7 @@ const translations = {
     mobileAlt: "نموذج تطبيق جوال جرس",
     rollupAlt: "نموذج رول أب جرس",
     navWho: "من نحن",
+    navGuidebook: "الدليل الكامل",
     navLogo: "الشعار",
     navColors: "الألوان",
     navTypography: "الخطوط",
@@ -38,11 +42,23 @@ const translations = {
     downloadPdf: "PDF",
     heroTitle: "دليل هوية جرس",
     heroCopy: "نظام هوية لقطاع الضيافة يرتكز على إشارة واضحة: تشغيل أحدث، تجربة ضيف لا تنسى، ولغة بصرية تبدأ من علامة جرس.",
-    viewSystem: "استعراض النظام",
+    viewFullGuide: "استعراض الدليل الكامل",
+    viewSystem: "النظام البصري",
     viewMockups: "التطبيقات",
     identityKicker: "الهوية",
     introTitle: "مصممة لتحديث تجربة الضيافة.",
     introCopy: "تمكّن جرس ملاك مرافق الإقامة والفنادق من تقديم خدمة استثنائية، ورفع كفاءة التشغيل، وصناعة تجربة ضيف لا تنسى.",
+    guidebookKicker: "الدليل الكامل",
+    guidebookTitle: "كل صفحات هوية جرس في تجربة واحدة.",
+    guidebookCopy: "استعرض الصفحات الأصلية من ملف الهوية، مرتبة حسب الأقسام حتى يسهل الوصول إلى الشعار، الألوان، الخطوط، النمط، وتطبيقات الهوية.",
+    guidebookFilters: "تصفية صفحات الدليل",
+    filterAll: "الكل",
+    filterFoundation: "الأساسيات",
+    filterLogo: "الشعار",
+    filterSystem: "النظام البصري",
+    filterApplications: "التطبيقات",
+    pageLabel: "دليل الهوية",
+    pageNo: "صفحة رقم",
     whoKicker: "من نحن",
     whoTitle: "الرؤية، الرسالة، والقيم",
     visionTitle: "رؤيتنا",
@@ -128,6 +144,7 @@ const translations = {
     mobileAlt: "jaras mobile app mockup",
     rollupAlt: "jaras rollup banner mockup",
     navWho: "Who We Are",
+    navGuidebook: "Full Guide",
     navLogo: "Logo",
     navColors: "Colors",
     navTypography: "Typography",
@@ -135,11 +152,23 @@ const translations = {
     downloadPdf: "PDF",
     heroTitle: "jaras Brand Guidelines",
     heroCopy: "A hospitality identity system built around a clear signal: modern operations, memorable guest experiences, and a visual language anchored by the jaras mark.",
+    viewFullGuide: "View Full Guide",
     viewSystem: "View System",
     viewMockups: "Mockups",
     identityKicker: "Identity",
     introTitle: "Built for hospitality modernization.",
     introCopy: "Jaras enables accommodation and hotel owners to provide exceptional service, improve operational efficiency, and create unforgettable guest experiences.",
+    guidebookKicker: "Full Guideline",
+    guidebookTitle: "Every Jaras guideline page in one experience.",
+    guidebookCopy: "Browse the original identity pages grouped by section, making logo, color, typography, pattern, social, and mockup guidance easy to reach.",
+    guidebookFilters: "Filter guideline pages",
+    filterAll: "All",
+    filterFoundation: "Foundation",
+    filterLogo: "Logo",
+    filterSystem: "Visual System",
+    filterApplications: "Applications",
+    pageLabel: "Brand guidelines",
+    pageNo: "Page No.",
     whoKicker: "Who We Are",
     whoTitle: "Vision, mission, and values",
     visionTitle: "Our Vision",
@@ -203,6 +232,40 @@ const translations = {
   },
 };
 
+const guidePages = [
+  { page: 1, category: "foundation", ar: "غلاف دليل الهوية", en: "Brand Guidelines Cover" },
+  { page: 2, category: "foundation", ar: "المحتويات", en: "Contents" },
+  { page: 3, category: "foundation", ar: "من نحن", en: "Who We Are" },
+  { page: 4, category: "foundation", ar: "رؤيتنا", en: "Our Vision" },
+  { page: 5, category: "foundation", ar: "رسالتنا", en: "Our Mission" },
+  { page: 6, category: "system", ar: "النمط البصري", en: "Visual Style" },
+  { page: 7, category: "foundation", ar: "قيم العلامة", en: "Our Values" },
+  { page: 8, category: "system", ar: "بنية الأيقونة", en: "Icon Structure" },
+  { page: 9, category: "system", ar: "بنية الكتابة", en: "Type Structure" },
+  { page: 10, category: "logo", ar: "الشعار الأساسي - أفقي", en: "Main Logo - Horizontal" },
+  { page: 11, category: "logo", ar: "الشعار الأساسي - عمودي", en: "Main Logo - Vertical" },
+  { page: 12, category: "logo", ar: "المساحة الآمنة", en: "Clear Space" },
+  { page: 13, category: "logo", ar: "استخدامات الشعار الخاطئة", en: "Logo Misuse" },
+  { page: 14, category: "logo", ar: "مواضع الشعار", en: "Logo Placements" },
+  { page: 15, category: "system", ar: "شبكة التخطيط", en: "Grid System" },
+  { page: 16, category: "system", ar: "ألوان العلامة", en: "Brand Colors" },
+  { page: 17, category: "logo", ar: "تنويعات لون الشعار", en: "Logo Color Variation" },
+  { page: 18, category: "system", ar: "الخطوط", en: "Typography" },
+  { page: 19, category: "system", ar: "عناصر العلامة", en: "Brand Elements" },
+  { page: 20, category: "system", ar: "النمط", en: "Pattern" },
+  { page: 21, category: "applications", ar: "معرض الإلهام", en: "Inspiration Gallery" },
+  { page: 22, category: "applications", ar: "وسائل التواصل الاجتماعي", en: "Social Media" },
+  { page: 23, category: "applications", ar: "بطاقة العمل", en: "Business Card Mockup" },
+  { page: 24, category: "applications", ar: "بطاقة التعريف", en: "Badge Mockup" },
+  { page: 25, category: "applications", ar: "حقيبة جرس", en: "Tote Bag Mockup" },
+  { page: 26, category: "applications", ar: "تطبيق الحاسب", en: "Laptop Mockup" },
+  { page: 27, category: "applications", ar: "الأعلام", en: "Flags Mockup" },
+  { page: 28, category: "applications", ar: "تطبيق الواجهة الرقمية", en: "Website Application" },
+  { page: 29, category: "applications", ar: "تطبيق الجوال", en: "Mobile Mockup" },
+  { page: 30, category: "applications", ar: "شاشة داخلية", en: "Display Mockup" },
+  { page: 31, category: "applications", ar: "رول أب", en: "Rollup Mockup" },
+];
+
 function updateHeader() {
   header.classList.toggle("is-scrolled", window.scrollY > 12);
 }
@@ -229,6 +292,63 @@ function showToast(message) {
   toastTimer = window.setTimeout(() => {
     toast.classList.remove("is-visible");
   }, 1400);
+}
+
+function renderGuidebook() {
+  if (!guidebookGrid) return;
+  const dictionary = translations[currentLanguage] || translations.ar;
+  const pages = guidePages.filter((item) => activeGuideFilter === "all" || item.category === activeGuideFilter);
+
+  guidebookGrid.replaceChildren();
+
+  pages.forEach((item) => {
+    const pageNumber = String(item.page).padStart(2, "0");
+    const title = item[currentLanguage] || item.en;
+    const card = document.createElement("article");
+    card.className = "guide-page-card";
+    card.dataset.category = item.category;
+
+    const meta = document.createElement("div");
+    meta.className = "guide-page-meta";
+
+    const titleBlock = document.createElement("div");
+    const label = document.createElement("span");
+    label.className = "guide-page-label";
+    label.textContent = dictionary.pageLabel;
+    const heading = document.createElement("h3");
+    heading.textContent = title;
+    titleBlock.append(label, heading);
+
+    const number = document.createElement("span");
+    number.className = "guide-page-number";
+    number.textContent = `${dictionary.pageNo} ${pageNumber}`;
+
+    const visual = document.createElement("a");
+    visual.className = "guide-page-visual";
+    visual.href = `assets/pages/jaras-guideline-${pageNumber}.jpg`;
+    visual.target = "_blank";
+    visual.rel = "noopener";
+    visual.setAttribute("aria-label", `${dictionary.pageNo} ${pageNumber}: ${title}`);
+
+    const image = document.createElement("img");
+    image.src = `assets/pages/jaras-guideline-${pageNumber}.jpg`;
+    image.alt = `${dictionary.pageNo} ${pageNumber}: ${title}`;
+    image.loading = item.page <= 4 ? "eager" : "lazy";
+    image.decoding = "async";
+    visual.append(image);
+
+    meta.append(titleBlock, number);
+    card.append(meta, visual);
+    guidebookGrid.append(card);
+  });
+}
+
+function setGuideFilter(filter) {
+  activeGuideFilter = filter || "all";
+  guideFilterButtons.forEach((button) => {
+    button.classList.toggle("is-active", button.dataset.guideFilter === activeGuideFilter);
+  });
+  renderGuidebook();
 }
 
 function applyLanguage(language) {
@@ -269,6 +389,7 @@ function applyLanguage(language) {
     languageToggle.setAttribute("aria-label", dictionary.switchLanguage);
   }
 
+  renderGuidebook();
   activateLink(window.location.hash, true);
 }
 
@@ -293,6 +414,10 @@ languageToggle?.addEventListener("click", () => {
 
 navLinks.forEach((link) => {
   link.addEventListener("click", () => activateLink(link.hash, true));
+});
+
+guideFilterButtons.forEach((button) => {
+  button.addEventListener("click", () => setGuideFilter(button.dataset.guideFilter));
 });
 
 const observedSections = navLinks
