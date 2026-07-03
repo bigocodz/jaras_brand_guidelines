@@ -1,6 +1,6 @@
 # jaras Brand Guidelines Webpage
 
-Static webpage version of the jaras brand guidelines.
+Static bilingual webpage version of the jaras brand guidelines. Arabic is the default view, with an English switcher in the header.
 
 Open `index.html` in a browser, or run a local server from this folder:
 

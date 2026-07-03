@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Jaras brand guidelines for logo, colors, typography, visual elements, pattern, and mockup applications.">
-    <title>jaras Brand Guidelines</title>
+    <meta name="description" content="دليل هوية جرس للعلامة التجارية: الشعار، الألوان، الخطوط، العناصر البصرية، النمط، وتطبيقات الهوية.">
+    <title>دليل هوية جرس</title>
     <link rel="icon" href="assets/img/jaras-mark.png" type="image/png">
     <link rel="preload" href="assets/img/jaras-logo-white.png" as="image">
     <link rel="preload" href="assets/img/business-card.jpg" as="image">
@@ -12,22 +12,27 @@
   </head>
   <body>
     <header class="site-header" data-site-header>
-      <a class="brand-lockup" href="#top" aria-label="jaras brand guidelines home">
-        <img src="assets/img/jaras-logo-white.png" alt="jaras">
+      <a class="brand-lockup" href="#top" aria-label="العودة إلى بداية دليل جرس" data-i18n-aria="brandHome">
+        <img src="assets/img/jaras-logo-white.png" alt="جرس">
       </a>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="#who">Who We Are</a>
-        <a href="#logo">Logo</a>
-        <a href="#colors">Colors</a>
-        <a href="#typography">Typography</a>
-        <a href="#applications">Applications</a>
+      <nav class="site-nav" aria-label="التنقل الرئيسي" data-i18n-aria="primaryNav">
+        <a href="#who" data-i18n="navWho">من نحن</a>
+        <a href="#logo" data-i18n="navLogo">الشعار</a>
+        <a href="#colors" data-i18n="navColors">الألوان</a>
+        <a href="#typography" data-i18n="navTypography">الخطوط</a>
+        <a href="#applications" data-i18n="navApplications">التطبيقات</a>
       </nav>
-      <a class="header-action" href="assets/jaras_brand_guidelines.pdf" download>
-        <svg aria-hidden="true" viewBox="0 0 24 24">
-          <path d="M12 3v11m0 0 4-4m-4 4-4-4M5 18h14"></path>
-        </svg>
-        <span>PDF</span>
-      </a>
+      <div class="header-tools">
+        <button class="lang-toggle" type="button" data-lang-toggle aria-label="Switch to English">
+          <span data-current-lang>EN</span>
+        </button>
+        <a class="header-action" href="assets/jaras_brand_guidelines.pdf" download>
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M12 3v11m0 0 4-4m-4 4-4-4M5 18h14"></path>
+          </svg>
+          <span data-i18n="downloadPdf">PDF</span>
+        </a>
+      </div>
     </header>
 
     <main id="top">
@@ -40,40 +45,38 @@
         </div>
         <div class="hero-content">
           <p class="eyebrow">V 1.0.0 / 15.11.24</p>
-          <h1 id="hero-title">jaras Brand Guidelines</h1>
-          <p class="hero-copy">
-            A hospitality identity system built around a clear signal: modern operations,
-            memorable guest experiences, and a visual language anchored by the jaras mark.
+          <h1 id="hero-title" data-i18n="heroTitle">دليل هوية جرس</h1>
+          <p class="hero-copy" data-i18n="heroCopy">
+            نظام هوية لقطاع الضيافة يرتكز على إشارة واضحة: تشغيل أحدث، تجربة ضيف لا تنسى، ولغة بصرية تبدأ من علامة جرس.
           </p>
           <div class="hero-actions">
             <a class="button button-light" href="#visual-system">
               <svg aria-hidden="true" viewBox="0 0 24 24">
                 <path d="M4 6h16M4 12h16M4 18h10"></path>
               </svg>
-              <span>View System</span>
+              <span data-i18n="viewSystem">استعراض النظام</span>
             </a>
             <a class="button button-outline" href="#applications">
               <svg aria-hidden="true" viewBox="0 0 24 24">
                 <path d="M4 7h16v10H4zM8 21h8M12 17v4"></path>
               </svg>
-              <span>Mockups</span>
+              <span data-i18n="viewMockups">التطبيقات</span>
             </a>
           </div>
         </div>
-        <div class="hero-visual" aria-label="jaras business card mockup">
-          <img src="assets/img/business-card.jpg" alt="jaras business card mockup">
+        <div class="hero-visual" aria-label="نموذج بطاقة عمل جرس" data-i18n-aria="heroVisual">
+          <img src="assets/img/business-card.jpg" alt="نموذج بطاقة عمل جرس" data-i18n-alt="businessCardAlt">
         </div>
       </section>
 
-      <section class="section-light intro-strip" aria-label="Brand overview">
+      <section class="section-light intro-strip" aria-label="نظرة عامة على الهوية" data-i18n-aria="brandOverview">
         <div class="section-shell intro-grid">
           <div>
-            <p class="section-kicker">Identity</p>
-            <h2>Built for hospitality modernization.</h2>
+            <p class="section-kicker" data-i18n="identityKicker">الهوية</p>
+            <h2 data-i18n="introTitle">مصممة لتحديث تجربة الضيافة.</h2>
           </div>
-          <p>
-            Jaras enables accommodation and hotel owners to provide exceptional service,
-            improve operational efficiency, and create unforgettable guest experiences.
+          <p data-i18n="introCopy">
+            تمكّن جرس ملاك مرافق الإقامة والفنادق من تقديم خدمة استثنائية، ورفع كفاءة التشغيل، وصناعة تجربة ضيف لا تنسى.
           </p>
         </div>
       </section>
@@ -81,44 +84,41 @@
       <section class="section-light" id="who" aria-labelledby="who-title">
         <div class="section-shell">
           <div class="section-heading">
-            <p class="section-kicker">Who We Are</p>
-            <h2 id="who-title">Vision, mission, and values</h2>
+            <p class="section-kicker" data-i18n="whoKicker">من نحن</p>
+            <h2 id="who-title" data-i18n="whoTitle">الرؤية، الرسالة، والقيم</h2>
           </div>
           <div class="statement-grid">
             <article class="statement statement-navy">
               <span>01</span>
-              <h3>Our Vision</h3>
-              <p>
-                Lead the modernization of the hospitality sector through innovative
-                solutions that increase efficiency, improve guest experiences, raise
-                revenue, and promote sustainability.
+              <h3 data-i18n="visionTitle">رؤيتنا</h3>
+              <p data-i18n="visionCopy">
+                قيادة تحديث قطاع الضيافة عبر حلول مبتكرة ترفع كفاءة التشغيل، وتحسّن تجربة الضيف، وتزيد الإيرادات، وتدعم الاستدامة.
               </p>
             </article>
             <article class="statement statement-blue">
               <span>02</span>
-              <h3>Our Mission</h3>
-              <p>
-                Enable accommodation and hotel owners to provide exceptional service
-                that leads to an unforgettable guest experience.
+              <h3 data-i18n="missionTitle">رسالتنا</h3>
+              <p data-i18n="missionCopy">
+                تمكين ملاك مرافق الإقامة والفنادق من تقديم خدمة استثنائية تقود إلى تجربة ضيافة لا تنسى.
               </p>
             </article>
           </div>
-          <div class="values-grid" aria-label="Brand values">
+          <div class="values-grid" aria-label="قيم العلامة" data-i18n-aria="brandValues">
             <article>
-              <h3>Innovation</h3>
-              <p>We leverage cutting-edge technology to stay ahead in transforming hospitality.</p>
+              <h3 data-i18n="valueInnovationTitle">الابتكار</h3>
+              <p data-i18n="valueInnovationCopy">نوظف التقنية المتقدمة لنقود تحول قطاع الضيافة بخطوات أسرع.</p>
             </article>
             <article>
-              <h3>Creativity</h3>
-              <p>Our approach encourages out-of-the-box thinking and effective tools.</p>
+              <h3 data-i18n="valueCreativityTitle">الإبداع</h3>
+              <p data-i18n="valueCreativityCopy">نصمم أدوات فعالة ومختلفة تمنح عملاءنا حلولاً عملية ومميزة.</p>
             </article>
             <article>
-              <h3>Professional</h3>
-              <p>We deliver excellence, reliability, and integrity in everything we do.</p>
+              <h3 data-i18n="valueProfessionalTitle">الاحترافية</h3>
+              <p data-i18n="valueProfessionalCopy">نلتزم بالتميز والموثوقية والنزاهة في كل ما نقدمه.</p>
             </article>
             <article>
-              <h3>Hospitality</h3>
-              <p>We prioritize exceptional experiences for clients and their guests.</p>
+              <h3 data-i18n="valueHospitalityTitle">الضيافة</h3>
+              <p data-i18n="valueHospitalityCopy">نضع التجربة الاستثنائية للعميل والضيف في قلب كل قرار.</p>
             </article>
           </div>
         </div>
@@ -127,24 +127,24 @@
       <section class="section-navy" id="visual-system" aria-labelledby="visual-title">
         <div class="section-shell visual-grid">
           <div class="section-heading">
-            <p class="section-kicker">Visual Style</p>
-            <h2 id="visual-title">A system of signal, space, and half-circle rhythm.</h2>
+            <p class="section-kicker" data-i18n="visualKicker">النمط البصري</p>
+            <h2 id="visual-title" data-i18n="visualTitle">نظام من الإشارة، المساحة، وإيقاع نصف الدائرة.</h2>
           </div>
           <div class="visual-principles">
             <article>
               <span class="principle-mark half"></span>
-              <h3>Half-circle element</h3>
-              <p>The core element repeats from the logo into layout, pattern, and campaigns.</p>
+              <h3 data-i18n="halfTitle">عنصر نصف الدائرة</h3>
+              <p data-i18n="halfCopy">العنصر الأساسي يتكرر من الشعار إلى التخطيط، النمط، والحملات.</p>
             </article>
             <article>
               <span class="principle-mark angle">7°</span>
-              <h3>Subtle motion</h3>
-              <p>A modest angled construction gives the mark a forward, service-ready posture.</p>
+              <h3 data-i18n="motionTitle">حركة دقيقة</h3>
+              <p data-i18n="motionCopy">ميل بسيط يمنح العلامة حضوراً عملياً وجاهزاً للخدمة.</p>
             </article>
             <article>
               <span class="principle-mark pattern-mini"></span>
-              <h3>Modular pattern</h3>
-              <p>Pattern units extend brand recognition without competing with content.</p>
+              <h3 data-i18n="patternMiniTitle">نمط مرن</h3>
+              <p data-i18n="patternMiniCopy">وحدات قابلة للتكرار تعزز حضور العلامة دون مزاحمة المحتوى.</p>
             </article>
           </div>
         </div>
@@ -153,29 +153,29 @@
       <section class="section-light logo-section" id="logo" aria-labelledby="logo-title">
         <div class="section-shell">
           <div class="section-heading">
-            <p class="section-kicker">Logo</p>
-            <h2 id="logo-title">Primary lockup and usage rules</h2>
+            <p class="section-kicker" data-i18n="logoKicker">الشعار</p>
+            <h2 id="logo-title" data-i18n="logoTitle">الشعار الأساسي وقواعد الاستخدام</h2>
           </div>
           <div class="logo-showcase">
             <div class="logo-stage">
-              <img src="assets/img/jaras-logo-navy.png" alt="jaras primary logo">
+              <img src="assets/img/jaras-logo-navy.png" alt="شعار جرس الأساسي" data-i18n-alt="logoAlt">
             </div>
-            <div class="rules-grid" aria-label="Logo usage rules">
+            <div class="rules-grid" aria-label="قواعد استخدام الشعار" data-i18n-aria="logoRules">
               <article>
-                <h3>Clear Space</h3>
-                <p>Keep protective space around the logo so the bilingual lockup remains legible.</p>
+                <h3 data-i18n="clearSpaceTitle">المساحة الآمنة</h3>
+                <p data-i18n="clearSpaceCopy">اترك مساحة حماية حول الشعار ليبقى القفل الثنائي واضحاً ومقروءاً.</p>
               </article>
               <article>
-                <h3>No Effects</h3>
-                <p>Do not add shadows, glows, filters, or extra treatments to the logo.</p>
+                <h3 data-i18n="noEffectsTitle">بدون مؤثرات</h3>
+                <p data-i18n="noEffectsCopy">لا تضف ظلالاً أو توهجاً أو فلاتر أو أي معالجة إضافية للشعار.</p>
               </article>
               <article>
-                <h3>No Distortion</h3>
-                <p>Do not stretch, compress, rotate, or redraw the lockup.</p>
+                <h3 data-i18n="noDistortionTitle">بدون تشويه</h3>
+                <p data-i18n="noDistortionCopy">لا تمدد الشعار أو تضغطه أو تديره أو تعيد رسمه بصيغة جديدة.</p>
               </article>
               <article>
-                <h3>Contrast First</h3>
-                <p>Choose logo variations only where background contrast supports readability.</p>
+                <h3 data-i18n="contrastTitle">التباين أولاً</h3>
+                <p data-i18n="contrastCopy">اختر نسخة الشعار المناسبة فقط عندما يضمن الخلفية وضوح القراءة.</p>
               </article>
             </div>
           </div>
@@ -185,40 +185,40 @@
       <section class="section-light colors-section" id="colors" aria-labelledby="colors-title">
         <div class="section-shell">
           <div class="section-heading">
-            <p class="section-kicker">Brand Colors</p>
-            <h2 id="colors-title">Core palette and support accents</h2>
+            <p class="section-kicker" data-i18n="colorsKicker">ألوان العلامة</p>
+            <h2 id="colors-title" data-i18n="colorsTitle">لوحة أساسية مع ألوان داعمة</h2>
           </div>
           <div class="palette-grid">
             <button class="swatch swatch-blue" data-copy="#132EF5" type="button">
-              <span>Main</span>
+              <span data-i18n="mainColor">رئيسي</span>
               <strong>PANTONE 2728 C</strong>
               <small>RGB 19, 46, 245</small>
               <small>CMYK 92, 81, 0, 4</small>
               <code>#132EF5</code>
             </button>
             <button class="swatch swatch-navy" data-copy="#021441" type="button">
-              <span>Main</span>
+              <span data-i18n="mainColor">رئيسي</span>
               <strong>PANTONE 2768 C</strong>
               <small>RGB 2, 20, 65</small>
               <small>CMYK 97, 69, 0, 75</small>
               <code>#021441</code>
             </button>
             <button class="swatch swatch-soft" data-copy="#F4F4F4" type="button">
-              <span>Main</span>
+              <span data-i18n="mainColor">رئيسي</span>
               <strong>PANTONE 656 C</strong>
               <small>RGB 244, 244, 244</small>
               <small>CMYK 0, 0, 0, 4</small>
               <code>#F4F4F4</code>
             </button>
             <button class="swatch swatch-orange" data-copy="#FA8334" type="button">
-              <span>Support</span>
+              <span data-i18n="supportColor">داعم</span>
               <strong>PANTONE 1575 C</strong>
               <small>RGB 250, 131, 52</small>
               <small>CMYK 0, 48, 79, 2</small>
               <code>#FA8334</code>
             </button>
             <button class="swatch swatch-cyan" data-copy="#55C1FF" type="button">
-              <span>Support</span>
+              <span data-i18n="supportColor">داعم</span>
               <strong>PANTONE 2915 C</strong>
               <small>RGB 85, 193, 255</small>
               <small>CMYK 67, 24, 0, 0</small>
@@ -231,34 +231,32 @@
       <section class="section-light type-section" id="typography" aria-labelledby="type-title">
         <div class="section-shell type-grid">
           <div class="section-heading">
-            <p class="section-kicker">Typography</p>
-            <h2 id="type-title">Bilingual hierarchy</h2>
+            <p class="section-kicker" data-i18n="typeKicker">الخطوط</p>
+            <h2 id="type-title" data-i18n="typeTitle">هرمية ثنائية اللغة</h2>
           </div>
           <div class="type-specs">
             <article>
-              <span>For Titles</span>
+              <span data-i18n="forTitles">للعناوين</span>
               <h3>Forma DJR Arabic Banner</h3>
             </article>
             <article>
-              <span>For Paragraphs</span>
+              <span data-i18n="forParagraphs">للفقرات</span>
               <h3>Helvetica Neue LT Arabic</h3>
             </article>
           </div>
           <div class="type-samples">
-            <article>
-              <p class="sample-label">English</p>
-              <h3>Title Here</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+            <article dir="rtl" lang="ar">
+              <p class="sample-label" data-i18n="sampleArabic">العربية</p>
+              <h3 data-i18n="sampleArabicTitle">العنوان يكتب هنا</h3>
+              <p data-i18n="sampleArabicCopy">
+                هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، حيث يمكن أن يزيد عدد الحروف بحسب احتياج التصميم.
               </p>
             </article>
-            <article dir="rtl" lang="ar">
-              <p class="sample-label">Arabic</p>
-              <h3>العنوان يكتب هنا</h3>
-              <p>
-                هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، حيث يمكن أن
-                يزيد عدد الحروف بحسب احتياج التصميم.
+            <article dir="ltr" lang="en">
+              <p class="sample-label" data-i18n="sampleEnglish">English</p>
+              <h3 data-i18n="sampleEnglishTitle">Title Here</h3>
+              <p data-i18n="sampleEnglishCopy">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.
               </p>
             </article>
           </div>
@@ -268,14 +266,13 @@
       <section class="section-navy pattern-section" aria-labelledby="elements-title">
         <div class="section-shell pattern-layout">
           <div>
-            <p class="section-kicker">Brand Elements</p>
-            <h2 id="elements-title">The half-circle is the connective tissue.</h2>
-            <p>
-              The primary element appears repeatedly in the logo, making it the natural
-              foundation for patterns, layouts, social posts, and environmental graphics.
+            <p class="section-kicker" data-i18n="elementsKicker">عناصر العلامة</p>
+            <h2 id="elements-title" data-i18n="elementsTitle">نصف الدائرة هو الرابط البصري للهوية.</h2>
+            <p data-i18n="elementsCopy">
+              يظهر العنصر الرئيسي مرات متعددة داخل الشعار، لذلك يشكّل أساساً طبيعياً للأنماط، التخطيطات، المنشورات، والتطبيقات المكانية.
             </p>
           </div>
-          <div class="pattern-board" aria-label="jaras half-circle pattern">
+          <div class="pattern-board" aria-label="نمط نصف دائرة جرس" data-i18n-aria="patternBoard">
             <span></span><span></span><span></span><span></span><span></span><span></span>
             <span></span><span></span><span></span><span></span><span></span><span></span>
             <span></span><span></span><span></span><span></span><span></span><span></span>
@@ -287,48 +284,47 @@
       <section class="section-light applications-section" id="applications" aria-labelledby="applications-title">
         <div class="section-shell">
           <div class="section-heading">
-            <p class="section-kicker">Inspiration Gallery</p>
-            <h2 id="applications-title">Applications across touchpoints</h2>
+            <p class="section-kicker" data-i18n="applicationsKicker">معرض الإلهام</p>
+            <h2 id="applications-title" data-i18n="applicationsTitle">تطبيقات الهوية عبر نقاط التواصل</h2>
           </div>
           <div class="mockup-feature">
-            <img src="assets/img/display.jpg" alt="jaras hospitality display mockup">
+            <img src="assets/img/display.jpg" alt="تطبيق جرس على شاشة ضيافة" data-i18n-alt="displayAlt">
             <div>
               <img class="feature-mark" src="assets/img/jaras-mark.png" alt="">
-              <h3>When You Ring, We're Here to Serve</h3>
-              <p>
-                The system scales from compact digital layouts to physical spaces while
-                preserving the same color logic, typography, and half-circle gesture.
+              <h3 data-i18n="mockupFeatureTitle">عندما ترن، نحن هنا لخدمتك</h3>
+              <p data-i18n="mockupFeatureCopy">
+                يتسع النظام من الواجهات الرقمية الصغيرة إلى المساحات الواقعية مع الحفاظ على منطق اللون، الخط، وإشارة نصف الدائرة.
               </p>
             </div>
           </div>
           <div class="mockup-grid">
             <figure>
-              <img src="assets/img/business-card.jpg" alt="jaras business card mockup">
-              <figcaption>Business Card</figcaption>
+              <img src="assets/img/business-card.jpg" alt="نموذج بطاقة عمل جرس" data-i18n-alt="businessCardAlt">
+              <figcaption data-i18n="captionBusinessCard">بطاقة عمل</figcaption>
             </figure>
             <figure>
-              <img src="assets/img/lanyard.jpg" alt="jaras lanyard badge mockup">
-              <figcaption>Badge</figcaption>
+              <img src="assets/img/lanyard.jpg" alt="نموذج بطاقة تعريف جرس" data-i18n-alt="badgeAlt">
+              <figcaption data-i18n="captionBadge">بطاقة تعريف</figcaption>
             </figure>
             <figure>
-              <img src="assets/img/tote-bag.jpg" alt="jaras tote bag mockup">
-              <figcaption>Tote Bag</figcaption>
+              <img src="assets/img/tote-bag.jpg" alt="نموذج حقيبة جرس" data-i18n-alt="toteAlt">
+              <figcaption data-i18n="captionTote">حقيبة</figcaption>
             </figure>
             <figure>
-              <img src="assets/img/laptop.jpg" alt="jaras laptop campaign mockup">
-              <figcaption>Digital</figcaption>
+              <img src="assets/img/laptop.jpg" alt="نموذج حملة رقمية لجرس" data-i18n-alt="laptopAlt">
+              <figcaption data-i18n="captionDigital">رقمي</figcaption>
             </figure>
             <figure>
-              <img src="assets/img/flags.jpg" alt="jaras flags mockup">
-              <figcaption>Flags</figcaption>
+              <img src="assets/img/flags.jpg" alt="نموذج أعلام جرس" data-i18n-alt="flagsAlt">
+              <figcaption data-i18n="captionFlags">أعلام</figcaption>
             </figure>
             <figure>
-              <img src="assets/img/mobile.jpg" alt="jaras mobile app mockup">
-              <figcaption>Mobile</figcaption>
+              <img src="assets/img/mobile.jpg" alt="نموذج تطبيق جوال جرس" data-i18n-alt="mobileAlt">
+              <figcaption data-i18n="captionMobile">جوال</figcaption>
             </figure>
             <figure>
-              <img src="assets/img/rollup.jpg" alt="jaras rollup banner mockup">
-              <figcaption>Rollup</figcaption>
+              <img src="assets/img/rollup.jpg" alt="نموذج رول أب جرس" data-i18n-alt="rollupAlt">
+              <figcaption data-i18n="captionRollup">رول أب</figcaption>
             </figure>
           </div>
         </div>
@@ -337,9 +333,9 @@
 
     <footer class="site-footer">
       <div class="section-shell footer-grid">
-        <img src="assets/img/jaras-logo-white.png" alt="jaras">
+        <img src="assets/img/jaras-logo-white.png" alt="جرس">
         <p>www.jaras.io</p>
-        <a href="#top" aria-label="Back to top">
+        <a href="#top" aria-label="العودة إلى الأعلى" data-i18n-aria="backToTop">
           <svg aria-hidden="true" viewBox="0 0 24 24">
             <path d="m6 14 6-6 6 6"></path>
           </svg>
